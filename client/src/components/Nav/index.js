@@ -3,7 +3,9 @@ import React from 'react'
 function Nav() {
     return (
         <div>
-            Nav
+            <a href="/home">home</a>
+            <a href="/contact">contact</a>
+            <a href="/menu">menu</a>
         </div>
     )
 }
