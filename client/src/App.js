@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Nav from "./components/Nav";
 import Menu from "./pages/Menu";
 
+
 function App() {
   return (
     <Router>
