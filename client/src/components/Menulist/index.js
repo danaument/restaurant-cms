@@ -6,7 +6,7 @@ import API from "../../utils/API";
 
 const PostsList = () => {
 
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState()
 
   const getPosts = async () => {
     try {
@@ -22,6 +22,8 @@ const PostsList = () => {
   
 
   useEffect(() => {
+
+    //add conditional logic - if logged in - use user api. if not logged in - use default api.
     getPosts();
   }, []);
 
@@ -30,9 +32,9 @@ const PostsList = () => {
       <h1>All Blog Posts</h1>
       <h3 className="mb-5 mt-5">Click on a post to view</h3>
       {/* Replace `[]` with the appropriate arrays */}
-      {state.posts.length ? (
+      {items.posts.length ? (
         <List>
-          {state.posts.map(post => (
+          {items.posts.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
                 <strong>
@@ -46,9 +48,7 @@ const PostsList = () => {
       ) : (
         <h3>You haven't added any posts yet!</h3>
       )}
-      <div className="mt-5">
-        <Link to="favorites">View favorites</Link>
-      </div>
+
     </div>
   );
 };
