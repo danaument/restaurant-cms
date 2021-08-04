@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   name: {type: String, default: 'authenticated user'},
-  uuid: {type: String, required: true}
+  uid: {type: String, required: true}
 });
 
 const User = mongoose.model("User", userSchema);
