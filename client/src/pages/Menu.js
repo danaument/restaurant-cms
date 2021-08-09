@@ -1,9 +1,13 @@
 import React from 'react'
+import Menulist from "../components/Menulist/index";
 
 function Menu() {
+
     return (
         <div>
-            menu
+            <Menulist>
+                
+            </Menulist>
         </div>
     )
 }

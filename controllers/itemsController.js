@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   default: function (req, res) {
     db.Item.find({seedItem: true})
-      .sort({ section: -1 })
+      // .sort({ section: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },

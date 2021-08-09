@@ -15,7 +15,7 @@ router
   .delete(itemsController.remove);
 
 router
-  .route("/default")
+  .route("/default/")
   .get(itemsController.default);
 
 module.exports = router;

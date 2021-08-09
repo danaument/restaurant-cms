@@ -4,13 +4,13 @@ import { ListItem, List } from "../List";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 
-const PostsList = () => {
+const Menulist = () => {
 
     const [items, setItems] = useState()
 
-  const getPosts = async () => {
+  const getDefault = async () => {
     try {
-      const response = await API.getPosts();
+      const response = await API.getDefault();
 
     setItems(response.data);
 
@@ -24,7 +24,7 @@ const PostsList = () => {
   useEffect(() => {
 
     //add conditional logic - if logged in - use user api. if not logged in - use default api.
-    getPosts();
+    getDefault();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const PostsList = () => {
       <h1>All Blog Posts</h1>
       <h3 className="mb-5 mt-5">Click on a post to view</h3>
       {/* Replace `[]` with the appropriate arrays */}
-      {items.posts.length ? (
+      {items.items.length ? (
         <List>
           {items.posts.map(post => (
             <ListItem key={post._id}>
@@ -41,16 +41,16 @@ const PostsList = () => {
                   {post.title} by {post.author}
                 </strong>
               </Link>
-              <DeleteBtn onClick={() => {removePost(post._id)}} />
+              {/* <DeleteBtn onClick={() => {removePost(post._id)}} /> */}
             </ListItem>
           ))}
         </List>
       ) : (
-        <h3>You haven't added any posts yet!</h3>
+        <h3>You haven't added any items yet!</h3>
       )}
 
     </div>
   );
 };
 
-export default PostsList;
+export default Menulist;
