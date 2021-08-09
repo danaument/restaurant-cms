@@ -10,26 +10,31 @@ mongoose.connect(
 const menuSeed = [
   {
     name: "Chile con Queso",
-    price: 3.99
+    price: 3.99,
+    seedItem: true
   },
   {
     name: "Beef Enchiladas",
     desc: "2 Beef Enchiladas topped w/ gravy sauce & melted cheese. Served w/ rice & beans.",
-    price: 8.99
+    price: 8.99,
+    seedItem: true
   },
   {
     name: "Combinado Plate",
     desc: "Your choice of any 2 meats: beef fajita, pollo asadero, pastor & barbacoa. Served w/ rice & beans, salads",
-    price: 9.99
+    price: 9.99,
+    seedItem: true
   },
   {
     name: "Enchilada Plate",
     desc: "Served with rice & beans",
-    price: 3.99
+    price: 3.99,
+    seedItem: true
   },
   {
     name: "House Margarita",
-    price: 5.99
+    price: 5.99,
+    seedItem: true
   }
 ];
 

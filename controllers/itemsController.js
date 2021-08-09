@@ -2,6 +2,12 @@ const db = require("../models");
 
 // Defining methods for the ItemsController
 module.exports = {
+  default: function (req, res) {
+    db.Item.find({seedItem: true})
+      .sort({ section: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
   findAll: function(req, res) {
     db.Item.find(req.query)
       .sort({ date: -1 })

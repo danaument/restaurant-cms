@@ -14,4 +14,8 @@ router
   .put(itemsController.update)
   .delete(itemsController.remove);
 
+router
+  .route("/default")
+  .get(itemsController.default);
+
 module.exports = router;
