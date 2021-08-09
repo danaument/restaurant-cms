@@ -3,39 +3,43 @@ const db = require("../models");
 
 // This file empties the Items collection and inserts the books below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/restaurant-cms");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/restaurant-cms"
+);
 
 const menuSeed = [
   {
-//     title: "Hello World",
-//     author: "admin",
-//     body:
-//       "Welcome to your first Item! To create Items create a title and body. Don't forget to include your screen name!",
-//     date: new Date(Date.now())
-//   },
-//   {
-//     title: "The Second Item",
-//     author: "admin",
-//     body:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//     date: new Date(Date.now())
-//   },
-//   {
-//     title: "Another One",
-//     author: "admin",
-//     body:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//     date: new Date(Date.now())
+    name: "Chile con Queso",
+    price: 3.99
+  },
+  {
+    name: "Beef Enchiladas",
+    desc: "2 Beef Enchiladas topped w/ gravy sauce & melted cheese. Served w/ rice & beans.",
+    price: 8.99
+  },
+  {
+    name: "Combinado Plate",
+    desc: "Your choice of any 2 meats: beef fajita, pollo asadero, pastor & barbacoa. Served w/ rice & beans, salads",
+    price: 9.99
+  },
+  {
+    name: "Enchilada Plate",
+    desc: "Served with rice & beans",
+    price: 3.99
+  },
+  {
+    name: "House Margarita",
+    price: 5.99
   }
 ];
 
 db.Item.remove({})
   .then(() => db.Item.collection.insertMany(menuSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });

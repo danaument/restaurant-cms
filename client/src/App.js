@@ -8,16 +8,16 @@ import Fire from "./Fire";
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // If user is logged in, return user, else set log status to false
-  Fire.auth().onAuthStateChanged((user) => {
-    return user
-      ? setIsLoggedIn(true)
-      : setIsLoggedIn(false);
-  });
+  // // If user is logged in, return user, else set log status to false
+  // Fire.auth().onAuthStateChanged((user) => {
+  //   return user
+  //     ? setIsLoggedIn(true)
+  //     : setIsLoggedIn(false);
+  // });
 
-  console.log("logged in?", isLoggedIn);
+  // console.log("logged in?", isLoggedIn);
   
   return (
     <Router>
