@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = {
   getDefault: function () {
-    return axios.get("/api/default");
+    return axios.get("api/items");  //not the planned route
   },
 
   // Gets all posts
