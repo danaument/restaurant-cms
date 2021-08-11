@@ -3,22 +3,22 @@
   "name": "Restaurante Mabelita",
   "icons": [
     {
-      "src": "tacoicon_64.png",
+      "src": "tacoicon_64px.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     },
     {
-      "src": "tacoicon_96.png",
+      "src": "tacoicon_96px.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "tacoicon_256.png",
+      "src": "tacoicon_256px.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "tacoicon_512.png",
+      "src": "tacoicon_512px.png",
       "type": "image/png",
       "sizes": "512x512"
     }
